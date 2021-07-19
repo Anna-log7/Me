@@ -8,21 +8,19 @@ import './index.scss';
 
 const Home = lazy(() => import('../Home'));
 
-const Main = (): JSX.Element => {
-  return (
-    <div className="main">
-      <Navbar />
-      <div className="main__content">
-        <Suspense fallback={(<Spinner animation="grow" role="status" />)}>
-          <Switch>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </Suspense>
-      </div>
+const Main = (): JSX.Element => (
+  <div className="main">
+    <Navbar />
+    <div className="main__content">
+      <Suspense fallback={(<Spinner animation="grow" role="status" />)}>
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Suspense>
     </div>
-  );
-};
+  </div>
+);
 
 export default Main;

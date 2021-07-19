@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Fade from 'react-bootstrap/Fade';
 
+import './index.scss';
+
 type FadeByLetterProps = {
   text: string;
 };
@@ -30,8 +32,9 @@ const FadeByLetter = ({
   return (
     <>
       {letters.map((letter, index) => (
+        // eslint-disable-next-line react/no-array-index-key
         <Fade appear in={index < lengthShown} key={index} timeout={200}>
-          <span>{letter}</span>
+          <span className="fade-text">{letter}</span>
         </Fade>
       ))}
     </>
