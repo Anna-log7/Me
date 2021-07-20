@@ -3,33 +3,37 @@ $opacity: 0.6;
 $colors: (
   #e9c46a,
   #f4a261,
-  #e76f51
+  #e76f51,
 );
 
 .bubble {
-  color: nth($colors, random() * length($colors) - 1);
+  display: inline-block;
+  position: fixed;
+  left: 40%;
+  bottom: -2vh;
+  color: nth($colors, random(length($colors - 1)) + 1);
   border-radius: 50%;
   height: $size;
   width: $size;
-  margin: 10px;
   box-shadow: ($size + 1rem) 0 (0.1rem + random()*0.1rem) currentColor;
-  // filter: brightness(10);
   opacity: $opacity;
 
-  transition: all 1s ease-out;
+  transition: all 1s linear;
   animation: slide 2s infinite;
 }
 
 @keyframes slide {
-  // 0% {
-  //   transform: translate(0, 0);
-  // }
+  0% {
+    transform: translate(0, 0);
+  }
 
-  // 50% {
-  //   transform: translate((random() * 15)+px, 70px);
-  // }
+  50% {
+    transform: translate((random() * 15)+em, -100px);
+    opacity: $opacity * 4;
+  }
 
   100% {
-    transform: translate((random() * 15)+px, 2vh);
+    transform: translate((random() * 15)+em, -200px);
+    opacity: 0;
   }
 }

@@ -7,10 +7,12 @@ import './index.scss';
 const BUBBLE_AMOUNT = 20;
 
 const Home = (): JSX.Element => (
-  <section>
-    {Array(20).fill(0).map(() => (
-      <Bubbles />
-    ))}
+  <section className="home">
+    <div className="home__bubbles">
+      {Array(BUBBLE_AMOUNT).fill(0).map(() => (
+        <Bubbles />
+      ))}
+    </div>
   </section>
 );
 
