@@ -4,4 +4,9 @@
     display: inline;
     height: 100vh;
   }
+
+  &__main-text {
+    display: flex;
+    justify-content: center;
+  }
 }

@@ -1,0 +1,68 @@
+.sliding-text {
+  position: fixed;
+  display: flex;
+  top: 50%;
+  margin: 0 auto;
+}
+
+$letter-width: 7px;
+$letter-height: 100px;
+$letter-angle: 25deg;
+
+.letter {
+  &__a {
+    display: inline-flex;
+    margin: 0 65px;
+
+    &--left {
+      height: calc(#{$letter-height} / 0.9063);
+      width: $letter-width;
+      border-radius: $letter-width;
+      background-color: #2a9d8f;
+      transform-origin: top;
+      transform: rotate(25deg);
+      margin: 0 -4px 0 0;
+    }
+
+    &--right {
+      height: calc(#{$letter-height} / 0.9063);
+      width: $letter-width;
+      border-radius: $letter-width;
+      background-color: #2a9d8f;
+      transform-origin: top;
+      transform: rotate(-25deg);
+      margin: 0 0 0 -4px;
+    }
+  }
+
+  &__n {
+    display: inline-flex;
+    margin: 0 20px;
+
+    &--left {
+      height: $letter-height;
+      width: $letter-width;
+      border-radius: $letter-width;
+      background-color: #2a9d8f;
+      margin: 0 -4px 0 0;
+    }
+
+    &--middle {
+      height: calc(#{$letter-height} / 0.9063);
+      width: $letter-width;
+      border-radius: $letter-width;
+      background-color: #2a9d8f;
+      transform-origin: top;
+      transform: rotate(-25deg);
+      margin: 0 19px 0 -4px;
+    }
+
+    &--right {
+      height: $letter-height;
+      width: $letter-width;
+      border-radius: $letter-width;
+      background-color: #2a9d8f;
+      margin: 0 0 0 20px;
+    }
+  }
+}

@@ -9,31 +9,12 @@ $colors: (
 .bubble {
   display: inline-block;
   position: fixed;
-  left: 40%;
-  bottom: -2vh;
-  color: nth($colors, random(length($colors - 1)) + 1);
+  // left: 40%;
+  bottom: -4vh;
   border-radius: 50%;
   height: $size;
   width: $size;
-  box-shadow: ($size + 1rem) 0 (0.1rem + random()*0.1rem) currentColor;
   opacity: $opacity;
 
   transition: all 1s linear;
-  animation: slide 2s infinite;
-}
-
-@keyframes slide {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate((random() * 15)+em, -100px);
-    opacity: $opacity * 4;
-  }
-
-  100% {
-    transform: translate((random() * 15)+em, -200px);
-    opacity: 0;
-  }
 }
